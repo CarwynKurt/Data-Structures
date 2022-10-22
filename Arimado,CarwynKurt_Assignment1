@@ -1,0 +1,33 @@
+# Arimado, Carwyn Kurt S.
+# BSCOE 1-2
+# Assignment 1
+
+# Name and Nickname
+print("Name: Carwyn Kurt S. Arimado")
+print("Nickname: CK")
+
+# Variables
+letter_C = [[" " for i in range(7)] for j in range (7)]
+letter_K = [[" " for i in range(7)] for j in range (7)]
+
+# Letter C Asterisk Loop
+for row in range(7):
+    for column in range(7):
+        if column == 0 and (row != 0 and row != 6) or ((row == 0 or row == 6) and (column > 0)):
+            letter_C[row][column] = "*"
+
+# Letter K Asterisk Loop
+for row in range(7):
+    for column in range(7):
+        if column == 0 or (row + column == 4 and row < 4) or (column == row - 2 and row >= 4):
+            letter_K[row][column] = "*"
+
+# Placement of Asterisk
+for i in range(7):
+    for j in range(7):
+        print(letter_C[i][j], end = "")
+    print(end = "  ")
+    for j in range(7):
+        print(letter_K[i][j], end = "")
+    print(end = "  ")
+    print()
